@@ -26,7 +26,7 @@ namespace DataManagement
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
@@ -37,6 +37,9 @@ namespace DataManagement
             app.MapControllers();
 
             app.Run();
+
+            // Testing PR difference
+
         }
     }
 }
